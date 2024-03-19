@@ -1,0 +1,48 @@
+:root {
+  --orange-600: #f24c26;
+  --orange-500: #f46647;
+  --orange-400: #f7876e;
+  --white-900: #ffffff;
+  --red-900: #ff0000;
+  --gray-700: #737791;
+  --gray-500: #94a3b8;
+  --gray-300: #e2e8f0;
+  --gray-100: #f8faff;
+  --cyan-900: #087e91;
+  --cyan-700: #0b9eb6;
+  --darkBlue-900: #1e293b;
+  --darkBlue-600: #475569;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  color: var(--darkBlue-900);
+  background: var(--gray-100);
+  -webkit-font-smoothing: antialiased;
+}
+
+body,
+input,
+textarea,
+button {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-size: 1.6rem;
+}
+
+li {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}

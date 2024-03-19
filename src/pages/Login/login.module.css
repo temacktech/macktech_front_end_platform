@@ -1,0 +1,35 @@
+.container {
+  width: 100%;
+  height: 100svh;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+
+  background: linear-gradient(
+    315deg,
+    rgba(252, 176, 69, 1) 0%,
+    rgba(253, 29, 29, 1) 43%,
+    rgba(252, 176, 69, 1) 100%
+  );
+}
+
+.informations {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.informations img {
+  width: 100%;
+  max-width: 900px;
+}
+
+.login {
+  width: 100%;
+  min-width: 400px;
+  background: var(--white-900);
+
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}

@@ -1,0 +1,50 @@
+.loader {
+  width: 100%;
+  height: 100svh;
+
+  padding: 70px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  position: absolute;
+  z-index: 100;
+
+  background: var(--white-900);
+}
+
+.loader img {
+  width: 100%;
+  max-width: 380px;
+
+  animation: infiniteZoom 2.3s ease infinite;
+}
+
+/* Animação de zoom infinito */
+
+@keyframes infiniteZoom {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Ajustes de responsividade */
+
+@media screen and (max-width: 1024px) {
+  .loader img {
+    max-width: 300px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .loader img {
+    max-width: 250px;
+  }
+}
