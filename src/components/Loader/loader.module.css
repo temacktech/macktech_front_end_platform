@@ -21,7 +21,7 @@
   animation: infiniteZoom 2.3s ease infinite;
 }
 
-/* Animação de zoom infinito */
+/* Infinite zoom animation */
 
 @keyframes infiniteZoom {
   0% {
@@ -35,7 +35,7 @@
   }
 }
 
-/* Ajustes de responsividade */
+/* Responsive settings */
 
 @media screen and (max-width: 1024px) {
   .loader img {

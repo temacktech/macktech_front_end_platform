@@ -8,6 +8,7 @@
   --gray-500: #94a3b8;
   --gray-300: #e2e8f0;
   --gray-100: #f8faff;
+  --gray-50: #f8fafc;
   --cyan-900: #087e91;
   --cyan-700: #0b9eb6;
   --darkBlue-900: #1e293b;
@@ -27,14 +28,13 @@ html {
 body {
   color: var(--darkBlue-900);
   background: var(--gray-100);
-  -webkit-font-smoothing: antialiased;
 }
 
 body,
 input,
 textarea,
 button {
-  font-family: "Poppins", sans-serif;
+  font-family: "Titillium Web", sans-serif;
   font-weight: 400;
   font-size: 1.6rem;
 }

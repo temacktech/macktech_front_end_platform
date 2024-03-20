@@ -6,6 +6,8 @@
   grid-template-columns: 1fr 1fr;
   gap: 16px;
 
+  overflow: hidden;
+
   background: linear-gradient(
     315deg,
     rgba(252, 176, 69, 1) 0%,
@@ -29,7 +31,168 @@
 .login {
   width: 100%;
   min-width: 400px;
-  background: var(--white-900);
+  height: 100%;
 
+  padding: 3.2rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: var(--gray-50);
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.wrapper {
+  width: 100%;
+  max-width: 500px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 28px;
+}
+
+.wrapper img {
+  width: 100%;
+  max-width: 15rem;
+
+  cursor: pointer;
+}
+
+.loginForm h1 {
+  margin-bottom: 1.6rem;
+
+  font-weight: 700;
+  font-size: 3.7rem;
+}
+
+.loginForm h2 {
+  margin-bottom: 4rem;
+
+  font-weight: 400;
+  font-size: 1.6rem;
+  color: var(--darkBlue-600);
+}
+
+.fieldPacker {
+  margin-bottom: 2rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 8px;
+}
+
+.fieldPacker label {
+  font-weight: 600;
+  font-size: 1.7rem;
+}
+
+.fieldPacker input::placeholder {
+  color: var(--gray-500);
+}
+
+.fieldPacker input {
+  width: 100%;
+  height: 53px;
+
+  padding: 16px 12px;
+
+  border: 1px solid var(--gray-300);
+  border-radius: 4px;
+  outline: none;
+
+  font-weight: 400;
+  font-size: 16px;
+
+  color: var(--darkBlue-900);
+  background: var(--white-900);
+}
+
+.fieldPacker input[type="number"]::-webkit-inner-spin-button,
+.fieldPacker input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+}
+
+.fieldPacker span {
+  font-weight: 600;
+  font-size: 11px;
+  color: var(--red-900);
+}
+
+.checkbox {
+  margin-bottom: 1.6rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 4px;
+}
+
+.checkbox input {
+  width: 16px;
+  height: 16px;
+
+  cursor: pointer;
+}
+
+.checkbox label {
+  font-size: 14px;
+}
+
+.loginForm button {
+  width: 100%;
+  height: 56px;
+
+  margin: 1.6rem 0 3.2rem 0;
+  padding: 1.6rem 2.4rem;
+
+  border: none;
+  border-radius: 4px;
+
+  font-weight: 700;
+  font-size: 16px;
+
+  color: var(--white-900);
+  background: var(--cyan-700);
+
+  transition: 0.1s ease;
+  cursor: pointer;
+}
+
+.loginForm button:hover {
+  background: var(--cyan-900);
+}
+
+.forgotPassword {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 4px;
+}
+
+.forgotPassword h3 {
+  font-weight: 400;
+  font-size: 16px;
+  color: var(--darkBlue-600);
+}
+
+.forgotPassword a {
+  font-weight: 600;
+  font-size: 16px;
+  color: var(--cyan-700);
+}
+
+.forgotPassword a:hover {
+  text-decoration: underline;
+}
+
+/* Styling for invalid fields */
+
+.fieldPacker .invalidField {
+  outline: 1px solid var(--red-900);
 }
