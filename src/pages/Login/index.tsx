@@ -1,15 +1,14 @@
-import { useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
-
+import { useState } from "react";
 import { Link } from "react-router-dom";
 
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
 import { LoginData, LoginSchema } from "./schema/loginSchema";
 
 import bgInformations from "../../assets/images/bgLoginInformations.webp";
 import logo from "../../assets/images/logo.png";
 
 import style from "./login.module.css";
-import { useState } from "react";
 
 export function Login() {
   const [visiblePassword, setVisiblePassword] = useState(false);

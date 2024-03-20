@@ -4,7 +4,7 @@
 
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 16px;
+  gap: 32px;
 
   overflow: hidden;
 
@@ -30,7 +30,7 @@
 
 .login {
   width: 100%;
-  min-width: 400px;
+  min-width: 320px;
   height: 100%;
 
   padding: 3.2rem;
@@ -195,4 +195,16 @@
 
 .fieldPacker .invalidField {
   outline: 1px solid var(--red-900);
+}
+
+/* Responsive settings */
+
+@media screen and (max-width: 1180px) {
+  .container {
+    grid-template-columns: 1fr;
+  }
+
+  .informations {
+    display: none;
+  }
 }
