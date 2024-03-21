@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { LoginData, LoginSchema } from "./schema/loginSchema";
+import { LoginData, LoginSchema } from "./Schema/loginSchema";
 
 import bgInformations from "../../assets/images/bgLoginInformations.webp";
 import logo from "../../assets/images/logo.png";
@@ -27,7 +27,7 @@ export function Login() {
     resolver: zodResolver(LoginSchema),
   });
 
-  function handleLogin({ drt, password }: LoginData) {
+  function handleAuth({ drt, password }: LoginData) {
     console.log(drt, password);
   }
 
@@ -47,10 +47,7 @@ export function Login() {
       >
         <div className={style.wrapper}>
           <img src={logo} alt="Selo Macktech" />
-          <form
-            onSubmit={handleSubmit(handleLogin)}
-            className={style.loginForm}
-          >
+          <form onSubmit={handleSubmit(handleAuth)} className={style.loginForm}>
             <h1>Acesse a plataforma</h1>
             <h2>
               Faça login para começar a explorar os conteúdos de tecnologia
@@ -62,6 +59,7 @@ export function Login() {
                 className={`${errors.drt ? style.invalidField : ""}`}
                 type="number"
                 placeholder="Digite seu DRT"
+                autoComplete="off"
                 {...register("drt")}
                 required
               />
@@ -88,9 +86,9 @@ export function Login() {
               <label>Exibir senha</label>
             </div>
             <button type="submit">Entrar</button>
-            <footer className={style.forgotPassword}>
+            <footer className={style.resetPassword}>
               <h3>Esqueceu a senha?</h3>
-              <Link to={"/forgot_password"}>Redefina-a</Link>
+              <Link to={"/resetPassword"}>Redefina-a</Link>
             </footer>
           </form>
         </div>

@@ -30,14 +30,12 @@
 
 .login {
   width: 100%;
-  min-width: 320px;
   height: 100%;
 
   padding: 3.2rem;
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: grid;
+  place-items: center;
 
   background: var(--gray-50);
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
@@ -56,8 +54,6 @@
 .wrapper img {
   width: 100%;
   max-width: 15rem;
-
-  cursor: pointer;
 }
 
 .loginForm h1 {
@@ -90,10 +86,6 @@
   font-size: 1.7rem;
 }
 
-.fieldPacker input::placeholder {
-  color: var(--gray-500);
-}
-
 .fieldPacker input {
   width: 100%;
   height: 53px;
@@ -109,6 +101,10 @@
 
   color: var(--darkBlue-900);
   background: var(--white-900);
+}
+
+.fieldPacker input::placeholder {
+  color: var(--gray-500);
 }
 
 .fieldPacker input[type="number"]::-webkit-inner-spin-button,
@@ -166,7 +162,7 @@
   background: var(--cyan-900);
 }
 
-.forgotPassword {
+.resetPassword {
   width: 100%;
 
   display: flex;
@@ -175,19 +171,19 @@
   gap: 4px;
 }
 
-.forgotPassword h3 {
+.resetPassword h3 {
   font-weight: 400;
   font-size: 16px;
   color: var(--darkBlue-600);
 }
 
-.forgotPassword a {
+.resetPassword a {
   font-weight: 600;
   font-size: 16px;
   color: var(--cyan-700);
 }
 
-.forgotPassword a:hover {
+.resetPassword a:hover {
   text-decoration: underline;
 }
 
