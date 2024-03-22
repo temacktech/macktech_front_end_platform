@@ -41,7 +41,7 @@ export function PasswordResetRequest({
         const { status } = res;
 
         if (status === 200) {
-          toast.success("Solicitação realizada com sucesso!");
+          toast.success("Enviamos um código de verificação para o seu e-mail.");
           advancingPasswordResetProcess();
           setTimeout(() => {
             setButtonIsDisabled(false);
