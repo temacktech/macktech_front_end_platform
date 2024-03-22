@@ -6,10 +6,10 @@ import { PasswordResetRequest } from "../../components/PasswordResetRequest/pass
 import style from "./resetPassword.module.css";
 
 export function ResetPassword() {
-  const [resetProcess, setResetProcess] = useState(true);
+  const [resetProcess, setResetProcess] = useState(false);
 
   function advancingPasswordResetProcess() {
-    setResetProcess(false);
+    setResetProcess(true);
   }
 
   return (

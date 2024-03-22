@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 import { useForm } from "react-hook-form";
@@ -7,17 +8,21 @@ import {
   PasswordResetRequestData,
 } from "./Schema/passwordResetRequestSchema";
 
+import { Spinner } from "@chakra-ui/react";
 import { toast } from "sonner";
 
 import logo from "../../assets/images/logo.png";
 
 import style from "./passwordResetRequest.module.css";
+import UserApi from "../../api/userApi";
 
 type ResettingPasswordProps = { advancingPasswordResetProcess: () => void };
 
 export function PasswordResetRequest({
   advancingPasswordResetProcess,
 }: ResettingPasswordProps) {
+  const [buttonIsDisabled, setButtonIsDisabled] = useState(false);
+
   const navigate = useNavigate();
 
   const {
@@ -29,8 +34,28 @@ export function PasswordResetRequest({
   });
 
   function handlePasswordResetRequest({ drt }: PasswordResetRequestData) {
-    console.log(drt);
-    toast.success("Event has been created");
+    setButtonIsDisabled(true);
+
+    UserApi.post(`/forgot_password/${drt}`)
+      .then((res) => {
+        const { status } = res;
+
+        if (status === 200) {
+          toast.success("Solicitação realizada com sucesso!");
+          advancingPasswordResetProcess();
+          setTimeout(() => {
+            setButtonIsDisabled(false);
+          }, 1500);
+        }
+      })
+      .catch((error) => {
+        const errorMessage = error.response.data;
+
+        toast.warning(errorMessage);
+        setTimeout(() => {
+          setButtonIsDisabled(false);
+        }, 1000);
+      });
   }
 
   function handleReturnLoginPage() {
@@ -63,8 +88,9 @@ export function PasswordResetRequest({
           <button
             className={`${errors.drt ? style.blockedInvalidField : ""}`}
             type="submit"
+            disabled={buttonIsDisabled}
           >
-            Solicitar
+            {buttonIsDisabled ? <Spinner size="lg" /> : "Solicitar"}
           </button>
         </div>
       </form>

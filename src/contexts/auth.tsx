@@ -37,7 +37,7 @@ const AuthProvider = ({ children }: { children: React.ReactNode }) => {
     });
   }
 
-  checkAuthentication()
+  checkAuthentication();
 
   return (
     <AuthContext.Provider

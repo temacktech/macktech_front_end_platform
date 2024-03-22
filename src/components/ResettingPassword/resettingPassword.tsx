@@ -7,12 +7,20 @@ import {
   ResettingPasswordSchema,
 } from "./Schema/resettingPasswordSchema";
 
+import { Spinner } from "@chakra-ui/react";
+import { toast } from "sonner";
+
 import logo from "../../assets/images/logo.png";
 
 import style from "./resettingPassword.module.css";
-
+import UserApi from "../../api/userApi";
+import { useNavigate } from "react-router-dom";
 
 export function ResettingPassword() {
+  const navigate = useNavigate();
+
+  const [buttonIsDisabled, setButtonIsDisabled] = useState(false);
+
   const [visiblePasswords, setVisiblePasswords] = useState(false);
 
   const passwordsVisibilityType = visiblePasswords ? "text" : "password";
@@ -30,11 +38,36 @@ export function ResettingPassword() {
   });
 
   function handlePasswordReset({ resetCode, password }: ResettingPasswordData) {
-    console.log(resetCode, password);
+    setButtonIsDisabled(true);
+
+    UserApi.post("/reset_password", {
+      resetCode,
+      password,
+    })
+      .then((res) => {
+        const { status, data } = res;
+
+        if (status === 200) {
+          toast.success(data);
+
+          setTimeout(() => {
+            navigate("/login");
+            setButtonIsDisabled(false);
+          }, 1500);
+        }
+      })
+      .catch((error) => {
+        const errorMessage = error.response.data;
+
+        toast.warning(errorMessage);
+        setTimeout(() => {
+          setButtonIsDisabled(false);
+        }, 1000);
+      });
   }
 
   return (
-    <section className={style.resettingPassword}>
+    <section data-aos="zoom-in" className={style.resettingPassword}>
       <img src={logo} alt="Selo Macktech" />
       <h1>Redefinição de senha</h1>
       <h2>
@@ -95,8 +128,9 @@ export function ResettingPassword() {
         <button
           className={`${errors ? style.blockedInvalidField : ""}`}
           type="submit"
+          disabled={buttonIsDisabled}
         >
-          Redefinir
+          {buttonIsDisabled ? <Spinner size="lg" /> : "Redefinir"}
         </button>
       </form>
     </section>
