@@ -1,0 +1,32 @@
+.store {
+  width: 100svw;
+}
+
+.content {
+  width: 100%;
+  height: 100svh;
+
+  overflow-y: scroll;
+
+  padding: 9rem 3rem 0 33rem;
+
+  background: var(--gray-100);
+}
+
+.content h1 {
+  font-size: 2rem;
+}
+
+/* Responsive settings */
+
+@media screen and (max-width: 1080px) {
+  .content {
+    padding: 10rem 3rem 0 29rem;
+  }
+}
+
+@media screen and (max-width: 980px) {
+  .content {
+    padding: 10rem 3rem 0 10rem;
+  }
+}

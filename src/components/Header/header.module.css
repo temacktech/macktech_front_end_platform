@@ -1,0 +1,148 @@
+.header {
+  width: 100%;
+  height: 7rem;
+
+  padding: 0 3rem 0 33rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  position: fixed;
+
+  background: var(--white-900);
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+
+.header h1 {
+  font-weight: 400;
+  font-size: 2.4rem;
+  color: var(--darkBlue-700);
+}
+
+.profileLevel {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 1.5rem;
+
+  position: absolute;
+  left: 50%;
+}
+
+.level {
+  width: 50px;
+  height: 50px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 3px solid var(--cyan-700);
+  border-radius: 50%;
+
+  background: var(--cyan-900);
+}
+
+.level h2 {
+  font-weight: 700;
+  font-size: 2.8rem;
+  color: var(--white-900);
+}
+
+.progress {
+  width: 18rem;
+}
+
+.progress h2 {
+  margin-bottom: 0.4rem;
+
+  font-size: 2.2rem;
+}
+
+.wrapper {
+  margin-right: 1rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 12px;
+}
+
+.profile {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 2px;
+}
+
+.profile h1 {
+  font-weight: 600;
+  font-size: 1.8rem;
+  color: var(--darkBlue-900);
+}
+
+.profile h2 {
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+
+/* Responsive settings */
+
+@media screen and (max-width: 1200px) {
+  .header {
+    padding: 0 2rem 0 29rem;
+  }
+}
+
+@media screen and (max-width: 1080px) {
+  .profileLevel {
+    gap: 1rem;
+  }
+
+  .level {
+    width: 40px;
+    height: 40px;
+  }
+
+  .level h2 {
+    font-size: 2.4rem;
+  }
+
+  .progress {
+    width: 12rem;
+  }
+
+  .progress h2 {
+    margin-bottom: 0.2rem;
+
+    font-size: 1.8rem;
+  }
+}
+
+@media screen and (max-width: 980px) {
+  .header {
+    padding: 0 2rem 0 10rem;
+  }
+
+  .profileLevel {
+    left: 40%;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .profileLevel {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 460px) {
+  .header {
+    padding: 0 2rem 0 8rem;
+  }
+
+  .profile {
+    display: none;
+  }
+}

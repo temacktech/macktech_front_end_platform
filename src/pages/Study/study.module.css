@@ -1,0 +1,75 @@
+.trails {
+  width: 100svw;
+}
+
+.container {
+  width: 100%;
+  height: 100svh;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+
+  padding: 9rem 3rem 9rem 33rem;
+
+  overflow-y: scroll;
+
+  background: var(--gray-100);
+}
+
+.container h1 {
+  font-weight: 600;
+  font-size: 2.7rem;
+}
+
+.wrapper {
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.content {
+  width: 100%;
+  max-width: 80rem;
+}
+
+.modules {
+  width: 100%;
+  max-width: 35rem;
+}
+
+.modules h2 span {
+  font-weight: 400;
+  font-size: 2rem;
+  color: var(--white-900);
+}
+
+/* Responsive settings */
+
+@media screen and (max-width: 1220px) {
+  .wrapper {
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+}
+
+@media screen and (max-width: 1080px) {
+  .container {
+    padding: 10rem 3rem 0 29rem;
+  }
+}
+
+@media screen and (max-width: 980px) {
+  .container {
+    padding: 10rem 3rem 0 10rem;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .container {
+    padding: 10rem 3rem 0 9rem;
+  }
+}

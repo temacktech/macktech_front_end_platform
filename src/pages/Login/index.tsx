@@ -22,7 +22,7 @@ export function Login() {
     setTimeout(() => {
       checkAuthentication();
       setisLoading(false);
-    }, 2000);
+    }, 2500);
   }, [isAuthenticated]);
 
   const [isLoading, setisLoading] = useState(true);
@@ -108,7 +108,7 @@ export function Login() {
                   />
                   <label>Exibir senha</label>
                 </div>
-                <button type="submit">Entrar"</button>
+                <button type="submit">Entrar</button>
                 <footer className={style.resetPassword}>
                   <h3>Esqueceu a senha?</h3>
                   <Link to={"/resetPassword"}>Redefina-a</Link>

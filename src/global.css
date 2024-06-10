@@ -1,7 +1,9 @@
 :root {
   --orange-600: #f24c26;
+  --orange-550: #f4603e;
   --orange-500: #f46647;
   --orange-400: #f7876e;
+  --orange-200: #faaf9e;
   --white-900: #ffffff;
   --red-900: #ff0000;
   --gray-700: #737791;
@@ -11,7 +13,9 @@
   --gray-50: #f8fafc;
   --cyan-900: #087e91;
   --cyan-700: #0b9eb6;
+  --green-600: #29a329;
   --darkBlue-900: #1e293b;
+  --darkBlue-700: #2b3b55;
   --darkBlue-600: #475569;
 }
 
@@ -19,6 +23,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Titillium Web", sans-serif;
 }
 
 html {
@@ -31,6 +36,7 @@ body {
 }
 
 body,
+a,
 input,
 textarea,
 button {
